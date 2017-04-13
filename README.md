@@ -1,5 +1,7 @@
 # Liang-barsky line-clipping algorithm
 
+![Preview](https://w8r.github.io/liang-barsky/demo/thumbnail.png)
+
 Fast, *destructive* implemetation of [Liang-Barsky line clipping algorithm](https://en.wikipedia.org/wiki/Liang%E2%80%93Barsky_algorithm). It clips a 2D segment by a rectangle.
 
 This is an adaptation of the [C++ code](http://hinjang.com/articles/04.html#eight)
