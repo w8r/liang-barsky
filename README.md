@@ -1,4 +1,4 @@
-# Liang-barsky line-clipping algorithm
+# Liang-Barsky line-clipping algorithm
 
 ![Preview](https://w8r.github.io/liang-barsky/demo/thumbnail.png)
 
