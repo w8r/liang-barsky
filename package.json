@@ -1,0 +1,53 @@
+{
+  "name": "liang-barsky",
+  "version": "1.0.0",
+  "author": "Alexander Milevski <info@w8r.name>",
+  "license": "MIT",
+  "description": "Liang-Barsky line clipping algorithm",
+  "main": "dist/liang-barsky.js",
+  "jsnext:main": "dist/liang-barsky.es6.js",
+  "scripts": {
+    "prebuild": "eslint src",
+    "build": "rollup -c rollup.config.umd.js && rollup -c rollup.config.es6.js",
+    "pretest": "rollup -c rollup.config.tests.js",
+    "start": "npm run test:watch",
+    "test:watch": "nodemon --watch src --watch tests --exec 'npm test'",
+    "test": "mocha build/tests-bundle.js",
+    "prepublish": "npm run build && npm test",
+    "benchmark": "node tests/benchmark.js"
+  },
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "chai": "^3.5.0",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb-base": "^11.1.1",
+    "eslint-plugin-import": "^2.2.0",
+    "gh-pages": "^0.12.0",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "rollup": "^0.41.6",
+    "rollup-plugin-buble": "^0.15.0",
+    "rollup-plugin-multi-entry": "^2.0.1",
+    "rollup-watch": "^3.2.2",
+    "source-map-support": "^0.4.13"
+  },
+  "dependencies": {},
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w8r/liang-barsky.git"
+  },
+  "keywords": [
+    "liang-barsky",
+    "line",
+    "clipping",
+    "geometry",
+    "algorithm"
+  ],
+  "bugs": {
+    "url": "https://github.com/w8r/liang-barsky/issues"
+  },
+  "homepage": "https://github.com/w8r/liang-barsky#readme"
+}
