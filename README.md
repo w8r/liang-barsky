@@ -52,12 +52,18 @@ Or just drop-in the file
 
 ## Performance
 
+I ran a check against a one Cohen-Sutherland algorithm implemented by @mourner
+for clipping just one segment. Though test include memory allocation, they are
+fair for the task at hand, since you can use the results in an equal manner after
+the invocation of the clipper.
+
 ```
 npm run benchmark
 ```
 
 ```
-liang-barsky x 27,728,288 ops/sec ±1.50% (88 runs sampled)
+liang-barsky    x 15,313,783 ops/sec ±1.41% (82 runs sampled)
+mapbox/lineclip x  4,700,678 ops/sec ±2.12% (80 runs sampled)
 [1]+  Done                    node tests/benchmark.js
 
 ```

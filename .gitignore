@@ -1,3 +1,4 @@
-build
+build/test*.js
+build/*.map
 node_modules
 npm-debug.log

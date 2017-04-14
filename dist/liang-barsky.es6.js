@@ -1,3 +1,11 @@
+/**
+ * @preserve
+ * Fast, destructive implemetation of Liang-Barsky line clipping algorithm.
+ * It clips a 2D segment by a rectangle.
+ * @author Alexander Milevski <info@w8r.name>
+ * @license MIT
+ */
+
 var EPSILON = 1e-6;
 var abs = Math.abs;
 var INSIDE  = 1;
@@ -21,6 +29,12 @@ function clipT(num, denom, c) {
 }
 
 
+/**
+ * @param  {Array<number>} a
+ * @param  {Array<number>} b
+ * @param  {Array<number>} box [xmin, ymin, xmax, ymax]
+ * @return {number}
+ */
 function clip(a, b, box) {
   var x1 = a[0];
   var y1 = a[1];
