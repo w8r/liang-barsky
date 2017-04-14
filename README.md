@@ -30,6 +30,9 @@ console.log(a);               // [-10, -10]
 console.log(b);               // [10, 10]
 ```
 
+Return value is `1` if the line was clipped, and `0` if it lies completely
+outside of the provided bounding box.
+
 ## Install
 
 ```
