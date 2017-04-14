@@ -52,7 +52,7 @@ Or just drop-in the file
 
 ## Performance
 
-I ran a check against a one Cohen-Sutherland algorithm implemented by @mourner
+I ran a check against the Cohen-Sutherland algorithm implemented by @mourner
 for clipping just one segment. Though test include memory allocation, they are
 fair for the task at hand, since you can use the results in an equal manner after
 the invocation of the clipper.
