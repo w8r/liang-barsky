@@ -23,7 +23,7 @@ Non-destructive
 ```js
 var a  = [-10, -10], b  = [10, 10];
 var an = a.slice(),  bn = b.slice();
-clip(an, bn, [-5, -5, 5, 5]); // returns 1 - "clipped"
+clip(a, b, [-5, -5, 5, 5], an, bn); // returns 1 - "clipped"
 console.log(an);              // [-5, -5]
 console.log(bn);              // [5, 5]
 console.log(a);               // [-10, -10]
@@ -65,9 +65,9 @@ npm run benchmark
 ```
 
 ```
-liang-barsky    x 15,313,783 ops/sec ±1.41% (82 runs sampled)
-mapbox/lineclip x  4,700,678 ops/sec ±2.12% (80 runs sampled)
-[1]+  Done                    node tests/benchmark.js
+liang-barsky x 28,667,922 ops/sec ±1.16% (84 runs sampled)
+mapbox/lineclip x 4,679,332 ops/sec ±4.63% (83 runs sampled)
+- Fastest is liang-barsky
 
 ```
 

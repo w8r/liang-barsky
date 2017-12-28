@@ -11,8 +11,6 @@ describe('Liang-Barsky line clipper', () => {
   describe ('diagonal', () => {
 
     var a = [-10, -10], b = [10, 10];
-    console.log(clip(a, b, box));
-    console.log(a, b);
 
     it ('clip', () => {
       const a = [0, 0];
@@ -118,6 +116,74 @@ describe('Liang-Barsky line clipper', () => {
       assert.equal(clip(a, b, box), 1);
       assert.deepEqual(a, [5, 0]);
       assert.deepEqual(b, [5, 0]);
+    });
+
+  });
+
+  describe('non-destructive', () => {
+
+    it ('clip', () => {
+      const a = [0, 0];
+      const b = [20, 10];
+      const ar = a.slice(),
+            br = b.slice();
+      const c = [0,0],
+            d = [0,0];
+
+      assert.equal(clip(a, b, box, c, d), 1);
+
+      assert.deepEqual(a, ar);
+      assert.deepEqual(b, br);
+
+      assert.deepEqual(c, [0, 0]);
+      assert.deepEqual(d, [5, 2.5]);
+    });
+
+    it ('in', () => {
+      const a = [0, 0];
+      const b = [3, 3];
+      const ar = a.slice(),
+            br = b.slice();
+      const c = [0,0],
+            d = [0,0];
+
+      assert.equal(clip(a, b, box, c, d), 1);
+
+      assert.deepEqual(a, ar);
+      assert.deepEqual(b, br);
+
+      assert.deepEqual(c, [0, 0]);
+      assert.deepEqual(d, [3, 3]);
+
+    });
+
+
+    it ('out', () => {
+      const a = [6, 0];
+      const b = [20, 10];
+      const ar = a.slice(),
+            br = b.slice();
+      const c = [0,0],
+            d = [0,0];
+
+      assert.equal(clip(a, b, box, c, d), 0);
+
+      assert.deepEqual(a, ar);
+      assert.deepEqual(b, br);
+    });
+
+
+    it ('on', () => {
+      const a = [5, 0];
+      const b = [20, 10];
+      const ar = a.slice(),
+            br = b.slice();
+      const c = [0,0],
+            d = [0,0];
+
+      assert.equal(clip(a, b, box, c, d), 1);
+      assert.deepEqual(a, ar);
+      assert.deepEqual(b, br);
     });
 
   });

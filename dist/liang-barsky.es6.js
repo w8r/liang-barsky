@@ -33,15 +33,27 @@ function clipT(num, denom, c) {
  * @param  {Array<number>} a
  * @param  {Array<number>} b
  * @param  {Array<number>} box [xmin, ymin, xmax, ymax]
+ * @param  {Array<number>} [da]
+ * @param  {Array<number>} [db]
  * @return {number}
  */
-function clip(a, b, box) {
+function clip(a, b, box, da, db) {
   var x1 = a[0];
   var y1 = a[1];
   var x2 = b[0];
   var y2 = b[1];
   var dx = x2 - x1;
   var dy = y2 - y1;
+
+  if (arguments.length === 3) {
+    da = a;
+    db = b;
+  } else {
+    da[0] = a[0];
+    da[1] = a[1];
+    db[0] = b[0];
+    db[1] = b[1];
+  }
 
   if (abs(dx) < EPSILON && abs(dy) < EPSILON &&
       x1 >= box[0] && x1 <= box[2] &&
@@ -57,12 +69,12 @@ function clip(a, b, box) {
     var tE = c[0];
     var tL = c[1];
     if (tL < 1) {
-      b[0] = (x1 + tL * dx);
-      b[1] = (y1 + tL * dy);
+      db[0] = (x1 + tL * dx);
+      db[1] = (y1 + tL * dy);
     }
     if (tE > 0) {
-      a[0] += tE * dx;
-      a[1] += tE * dy;
+      da[0] += tE * dx;
+      da[1] += tE * dy;
     }
     return INSIDE;
   }

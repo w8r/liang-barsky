@@ -19,4 +19,7 @@ new Suite()
   .on('error', function(e) {
     throw e.target.error;
   })
+  .on('complete', function() {
+    console.log('- Fastest is ' + this.filter('fastest').map('name') + '\n');
+  })
   .run({ 'async': true });
