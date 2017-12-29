@@ -2,7 +2,7 @@ import buble      from 'rollup-plugin-buble';
 import multiEntry from 'rollup-plugin-multi-entry';
 
 export default {
-  entry:     'tests/**/*.test.js',
+  entry:     'tests/index.test.js',
   plugins:   [buble(), multiEntry()],
   format:    'cjs',
   external:  [ 'mocha', 'chai' ],
