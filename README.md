@@ -1,4 +1,4 @@
-# Liang-Barsky line-clipping algorithm ![npm](https://badge.fury.io/js/liang-barsky.svg) ![CircleCI](https://circleci.com/gh/w8r/liang-barsky/tree/master.svg?style=shield)
+# Liang-Barsky line-clipping algorithm [![npm](https://badge.fury.io/js/liang-barsky.svg)](https://www.npmjs.com/package/liang-barsky) [![CircleCI](https://circleci.com/gh/w8r/liang-barsky.svg?style=shield)](https://circleci.com/gh/w8r/liang-barsky)
 
 ![Preview](https://w8r.github.io/liang-barsky/demo/thumbnail.png)
 
