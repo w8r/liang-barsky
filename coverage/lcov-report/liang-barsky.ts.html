@@ -122,7 +122,13 @@
 77
 78
 79
-80</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+80
+81
+82
+83
+84
+85
+86</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -160,7 +166,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
@@ -180,11 +185,18 @@
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -209,28 +221,27 @@
  * @license MIT
  */
 &nbsp;
-const EPSILON = 1e-6;
-const INSIDE  = 1;
-const OUTSIDE = 0;
+const EPSILON = 1e-6
+const INSIDE = 1
+const OUTSIDE = 0
 &nbsp;
-type Point = Array&lt;number&gt;;
-type BoundingBox = Array&lt;number&gt;;
+type Point = number[];
+type BoundingBox = number[];
 &nbsp;
-function clipT(num:number, denom:number, c:Point) {
-  const [tE, tL] = c;
-  if (Math.abs(denom) &lt; EPSILON) return num &lt; 0;
-  const t = num / denom;
+function clipT(num: number, denom: number, c: Point) {
+  const [tE, tL] = c
+  if (Math.abs(denom) &lt; EPSILON) return num &lt; 0
+  const t = num / denom
 &nbsp;
   if (denom &gt; 0) {
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (t &gt; tL) <span class="cstat-no" title="statement not covered" >return 0;</span>
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (t &gt; tE) <span class="cstat-no" title="statement not covered" >c[0] = t;</span>
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (t &gt; tL) <span class="cstat-no" title="statement not covered" >return 0</span>
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (t &gt; tE) <span class="cstat-no" title="statement not covered" >c[0] = t</span>
   } else {
-    if (t &lt; tE) return 0;
-    if (t &lt; tL) c[1] = t;
+    if (t &lt; tE) return 0
+    if (t &lt; tL) c[1] = t
   }
-  return 1;
+  return 1
 }
-&nbsp;
 &nbsp;
 /**
  * @param  {Array&lt;number&gt;} a
@@ -240,45 +251,52 @@ function clipT(num:number, denom:number, c:Point) {
  * @param  {Array&lt;number&gt;} [db]
  * @return {number}
  */
-export default function clip(a:Point, b:Point, box:BoundingBox, da?:Point, db?:Point) {
-  const [x1, y1] = a;
-  const [x2, y2] = b;
-  const dx = x2 - x1;
-  const dy = y2 - y1;
+export default function clip(a: Point, b: Point, box: BoundingBox, da?: Point, db?: Point) {
+  const [x1, y1] = a
+  const [x2, y2] = b
+  const dx = x2 - x1
+  const dy = y2 - y1
 &nbsp;
   if (da === undefined || db === undefined) {
-    da = a;
-    db = b;
+    da = a
+    db = b
   } else {
-    da[0] = a[0];
-    da[1] = a[1];
-    db[0] = b[0];
-    db[1] = b[1];
+    da[0] = a[0]
+    da[1] = a[1]
+    db[0] = b[0]
+    db[1] = b[1]
   }
 &nbsp;
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (Math.abs(dx) &lt; EPSILON &amp;&amp; Math.abs(dy) &lt; EPSILON &amp;&amp;
-<span class="branch-2 cbranch-no" title="branch not covered" >      x1 &gt;= box[0] </span>&amp;&amp; <span class="branch-3 cbranch-no" title="branch not covered" >x1 &lt;= box[2] </span>&amp;&amp;
-<span class="branch-4 cbranch-no" title="branch not covered" >      y1 &gt;= box[1] </span>&amp;&amp; <span class="branch-5 cbranch-no" title="branch not covered" >y1 &lt;= box[3])</span> {
-<span class="cstat-no" title="statement not covered" >    return INSIDE;</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (
+    Math.abs(dx) &lt; EPSILON &amp;&amp;
+    Math.abs(dy) &lt; EPSILON &amp;&amp;
+<span class="branch-2 cbranch-no" title="branch not covered" >    x1 &gt;= box[0] </span>&amp;&amp;
+<span class="branch-3 cbranch-no" title="branch not covered" >    x1 &lt;= box[2] </span>&amp;&amp;
+<span class="branch-4 cbranch-no" title="branch not covered" >    y1 &gt;= box[1] </span>&amp;&amp;
+<span class="branch-5 cbranch-no" title="branch not covered" >    y1 &lt;= box[3]</span>
+  ) {
+<span class="cstat-no" title="statement not covered" >    return INSIDE</span>
   }
 &nbsp;
-  const c = [0, 1];
-  if (clipT(box[0] - x1,  dx, c) &amp;&amp;
-      clipT(x1 - box[2], -dx, c) &amp;&amp;
-      clipT(box[1] - y1,  dy, c) &amp;&amp;
-      clipT(y1 - box[3], -dy, c)) {
-    const [tE, tL] = c;
+  const c = [0, 1]
+  if (
+    clipT(box[0] - x1, dx, c) &amp;&amp;
+    clipT(x1 - box[2], -dx, c) &amp;&amp;
+    clipT(box[1] - y1, dy, c) &amp;&amp;
+    clipT(y1 - box[3], -dy, c)
+  ) {
+    const [tE, tL] = c
     if (tL &lt; 1) {
-      db[0] = (x1 + tL * dx);
-      db[1] = (y1 + tL * dy);
+      db[0] = x1 + tL * dx
+      db[1] = y1 + tL * dy
     }
     <span class="missing-if-branch" title="if path not taken" >I</span>if (tE &gt; 0) {
-<span class="cstat-no" title="statement not covered" >      da[0] += tE * dx;</span>
-<span class="cstat-no" title="statement not covered" >      da[1] += tE * dy;</span>
+<span class="cstat-no" title="statement not covered" >      da[0] += tE * dx</span>
+<span class="cstat-no" title="statement not covered" >      da[1] += tE * dy</span>
     }
-    return INSIDE;
+    return INSIDE
   }
-  return OUTSIDE;
+  return OUTSIDE
 }
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -286,7 +304,7 @@ export default function clip(a:Point, b:Point, box:BoundingBox, da?:Point, db?:P
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 13 2018 18:31:52 GMT+0100 (Central European Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 13 2018 19:10:07 GMT+0100 (Central European Standard Time)
 </div>
 </div>
 <script src="prettify.js"></script>
