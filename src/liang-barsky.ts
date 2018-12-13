@@ -10,8 +10,8 @@ const EPSILON = 1e-6
 const INSIDE = 1
 const OUTSIDE = 0
 
-type Point = Array<number>
-type BoundingBox = Array<number>
+type Point = [number, number]
+type BoundingBox = [number, number, number, number]
 
 function clipT(num: number, denom: number, c: Point) {
   const [tE, tL] = c
