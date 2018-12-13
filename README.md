@@ -1,4 +1,4 @@
-# Liang-Barsky line-clipping algorithm [![npm](https://badge.fury.io/js/liang-barsky.svg)](https://www.npmjs.com/package/liang-barsky) [![CircleCI](https://circleci.com/gh/w8r/liang-barsky.svg?style=shield)](https://circleci.com/gh/w8r/liang-barsky)
+# Liang-Barsky line-clipping algorithm [![npm](https://badge.fury.io/js/liang-barsky.svg)](https://www.npmjs.com/package/liang-barsky)
 
 ![Preview](https://w8r.github.io/liang-barsky/demo/thumbnail.png)
 
@@ -49,7 +49,7 @@ Or just drop-in the file
 ```html
 <script src="path/to/liang-barsky.umd.js"></script>
 <script>
-  lbclip([0, 0], [10, 10], [0, 0, 5, 5]);
+  liangBarsky([0, 0], [10, 10], [0, 0, 5, 5]);
 </script>
 ```
 

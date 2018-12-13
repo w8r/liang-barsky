@@ -50,7 +50,7 @@ ctx.beginPath();
 for (i = 0; i < 200; i++) {
   a = s[i];
   b = e[i];
-  if (lbclip(a, b, box)) {
+  if (liangBarsky(a, b, box)) {
     ctx.moveTo(a[0], a[1]);
     ctx.lineTo(b[0], b[1]);
     ctx.stroke();

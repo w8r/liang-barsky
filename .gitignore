@@ -2,3 +2,5 @@ build/test*.js
 build/*.map
 node_modules
 npm-debug.log
+.rpt2_cache
+.reify-cache

@@ -1,6 +1,6 @@
-var Suite = require('benchmark').Suite;
-var clip     = require('../dist/liang-barsky');
-var lineclip = require('lineclip');
+import { Suite } from 'benchmark';
+import clip from './dist/liang-barsky.umd';
+import lineclip from 'lineclip';
 
 const bbox = [-5, -5, 5, 5];
 
