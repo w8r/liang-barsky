@@ -10,8 +10,17 @@ const EPSILON = 1e-6;
 const INSIDE = 1;
 const OUTSIDE = 0;
 
-type Point = number[];
-type BoundingBox = number[];
+/**
+ * Endpoint
+ * @type {Array<number>}
+ */
+export type Point = [number, number];
+
+/**
+ * Rectangle
+ * @type {Array<number>}
+ */
+export type BoundingBox = [number, number, number, number];
 
 function clipT(num: number, denom: number, c: Point) {
   const [tE, tL] = c;
@@ -29,11 +38,11 @@ function clipT(num: number, denom: number, c: Point) {
 }
 
 /**
- * @param  {Array<number>} a
- * @param  {Array<number>} b
- * @param  {Array<number>} box [xmin, ymin, xmax, ymax]
- * @param  {Array<number>} [da]
- * @param  {Array<number>} [db]
+ * @param  {Point} a
+ * @param  {Point} b
+ * @param  {BoundingBox} box [xmin, ymin, xmax, ymax]
+ * @param  {Point?} [da]
+ * @param  {Point?} [db]
  * @return {number}
  */
 export default function clip(a: Point, b: Point, box: BoundingBox, da?: Point, db?: Point) {
@@ -63,7 +72,7 @@ export default function clip(a: Point, b: Point, box: BoundingBox, da?: Point, d
     return INSIDE;
   }
 
-  const c = [0, 1];
+  const c: Point = [0, 1];
   if (
     clipT(box[0] - x1, dx, c) &&
     clipT(x1 - box[2], -dx, c) &&
