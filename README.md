@@ -65,10 +65,9 @@ npm run benchmark
 ```
 
 ```
-liang-barsky x 28,667,922 ops/sec ±1.16% (84 runs sampled)
-mapbox/lineclip x 4,679,332 ops/sec ±4.63% (83 runs sampled)
+liang-barsky x 136,671,492 ops/sec ±0.36% (90 runs sampled)
+mapbox/lineclip x 9,030,039 ops/sec ±0.84% (86 runs sampled)
 - Fastest is liang-barsky
-
 ```
 
 ## Future plan
