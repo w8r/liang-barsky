@@ -1,3 +1,11 @@
-demo
 tests
-build
+docs
+demo
+coverage
+.reify-cache
+.rpt2_cache
+.editorconfig
+.eslintrc
+rollup.config.ts
+tsconfig.json
+tslint.json
