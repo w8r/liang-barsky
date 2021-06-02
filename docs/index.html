@@ -971,10 +971,9 @@ clip(a, b, [<span class="hljs-number">-5</span>, <span class="hljs-number">-5</s
 				for clipping just one segment. Though test include memory allocation, they are
 				fair for the task at hand, since you can use the results in an equal manner after
 			the invocation of the clipper.</p>
-			<pre><code>npm <span class="hljs-keyword">run</span><span class="bash"> benchmark</span></code></pre><pre><code>liang-barsky x <span class="hljs-number">28</span>,<span class="hljs-number">667</span>,<span class="hljs-number">922</span> ops/sec ±<span class="hljs-number">1.16</span>% (<span class="hljs-number">84</span> runs sampled)
-mapbox/lineclip x <span class="hljs-number">4</span>,<span class="hljs-number">679</span>,<span class="hljs-number">332</span> ops/sec ±<span class="hljs-number">4.63</span>% (<span class="hljs-number">83</span> runs sampled)
-- Fastest <span class="hljs-keyword">is</span> liang-barsky
-</code></pre><h2 id="future-plan">Future plan</h2>
+			<pre><code>npm <span class="hljs-keyword">run</span><span class="bash"> benchmark</span></code></pre><pre><code>liang-barsky x <span class="hljs-number">136</span>,<span class="hljs-number">671</span>,<span class="hljs-number">492</span> ops/sec ±<span class="hljs-number">0.36</span>% (<span class="hljs-number">90</span> runs sampled)
+mapbox/lineclip x <span class="hljs-number">9</span>,<span class="hljs-number">030</span>,<span class="hljs-number">039</span> ops/sec ±<span class="hljs-number">0.84</span>% (<span class="hljs-number">86</span> runs sampled)
+- Fastest <span class="hljs-keyword">is</span> liang-barsky</code></pre><h2 id="future-plan">Future plan</h2>
 			<p>Implement a sub-routine for polylines. Loop through pairs, tracking in-out
 			transitions.</p>
 			<h2 id="license">License</h2>
@@ -1018,7 +1017,7 @@ mapbox/lineclip x <span class="hljs-number">4</span>,<span class="hljs-number">6
 				<div class="tsd-signature tsd-kind-icon">Bounding<wbr>Box<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/w8r/liang-barsky/blob/79a03c6/src/liang-barsky.ts#L23">liang-barsky.ts:23</a></li>
+						<li>Defined in <a href="https://github.com/w8r/liang-barsky/blob/34ad018/src/liang-barsky.ts#L23">liang-barsky.ts:23</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1038,7 +1037,7 @@ mapbox/lineclip x <span class="hljs-number">4</span>,<span class="hljs-number">6
 				<div class="tsd-signature tsd-kind-icon">Point<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/w8r/liang-barsky/blob/79a03c6/src/liang-barsky.ts#L17">liang-barsky.ts:17</a></li>
+						<li>Defined in <a href="https://github.com/w8r/liang-barsky/blob/34ad018/src/liang-barsky.ts#L17">liang-barsky.ts:17</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1061,7 +1060,7 @@ mapbox/lineclip x <span class="hljs-number">4</span>,<span class="hljs-number">6
 				<div class="tsd-signature tsd-kind-icon">EPSILON<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">0.000001</span><span class="tsd-signature-symbol"> =&nbsp;0.000001</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/w8r/liang-barsky/blob/79a03c6/src/liang-barsky.ts#L9">liang-barsky.ts:9</a></li>
+						<li>Defined in <a href="https://github.com/w8r/liang-barsky/blob/34ad018/src/liang-barsky.ts#L9">liang-barsky.ts:9</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1071,7 +1070,7 @@ mapbox/lineclip x <span class="hljs-number">4</span>,<span class="hljs-number">6
 							It clips a 2D segment by a rectangle.</p>
 						</dd>
 						<dt>author</dt>
-						<dd><p>Alexander Milevski <a href="mailto:&#x69;&#x6e;&#102;&#x6f;&#x40;&#x77;&#x38;&#x72;&#x2e;&#x6e;&#97;&#109;&#101;">&#x69;&#x6e;&#102;&#x6f;&#x40;&#x77;&#x38;&#x72;&#x2e;&#x6e;&#97;&#109;&#101;</a></p>
+						<dd><p>Alexander Milevski <a href="mailto:&#x69;&#110;&#x66;&#x6f;&#x40;&#x77;&#56;&#114;&#x2e;&#110;&#97;&#109;&#101;">&#x69;&#110;&#x66;&#x6f;&#x40;&#x77;&#56;&#114;&#x2e;&#110;&#97;&#109;&#101;</a></p>
 						</dd>
 						<dt>license</dt>
 						<dd><p>MIT</p>
@@ -1085,7 +1084,7 @@ mapbox/lineclip x <span class="hljs-number">4</span>,<span class="hljs-number">6
 				<div class="tsd-signature tsd-kind-icon">INSIDE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">1</span><span class="tsd-signature-symbol"> =&nbsp;1</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/w8r/liang-barsky/blob/79a03c6/src/liang-barsky.ts#L10">liang-barsky.ts:10</a></li>
+						<li>Defined in <a href="https://github.com/w8r/liang-barsky/blob/34ad018/src/liang-barsky.ts#L10">liang-barsky.ts:10</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1095,7 +1094,7 @@ mapbox/lineclip x <span class="hljs-number">4</span>,<span class="hljs-number">6
 				<div class="tsd-signature tsd-kind-icon">OUTSIDE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">0</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/w8r/liang-barsky/blob/79a03c6/src/liang-barsky.ts#L11">liang-barsky.ts:11</a></li>
+						<li>Defined in <a href="https://github.com/w8r/liang-barsky/blob/34ad018/src/liang-barsky.ts#L11">liang-barsky.ts:11</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1112,7 +1111,7 @@ mapbox/lineclip x <span class="hljs-number">4</span>,<span class="hljs-number">6
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/w8r/liang-barsky/blob/79a03c6/src/liang-barsky.ts#L48">liang-barsky.ts:48</a></li>
+								<li>Defined in <a href="https://github.com/w8r/liang-barsky/blob/34ad018/src/liang-barsky.ts#L48">liang-barsky.ts:48</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1152,7 +1151,7 @@ mapbox/lineclip x <span class="hljs-number">4</span>,<span class="hljs-number">6
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/w8r/liang-barsky/blob/79a03c6/src/liang-barsky.ts#L25">liang-barsky.ts:25</a></li>
+								<li>Defined in <a href="https://github.com/w8r/liang-barsky/blob/34ad018/src/liang-barsky.ts#L25">liang-barsky.ts:25</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
