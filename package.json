@@ -1,6 +1,6 @@
 {
   "name": "liang-barsky",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Alexander Milevski <info@w8r.name>",
   "license": "MIT",
   "description": "Liang-Barsky line clipping algorithm",
