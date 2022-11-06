@@ -1,7 +1,7 @@
 var h = document.documentElement.clientHeight;
 var w = document.documentElement.clientWidth;
 var canvas = document.createElement('canvas');
-var ctx    = canvas.getContext('2d');
+var ctx = canvas.getContext('2d');
 document.body.appendChild(canvas);
 
 var pxRatio = window.devicePixelRatio;
@@ -9,17 +9,22 @@ var pxRatio = window.devicePixelRatio;
 var W = w * pxRatio;
 var H = h * pxRatio;
 
-canvas.width        = W;
-canvas.height       = H;
-canvas.style.width  = w + 'px';
+canvas.width = W;
+canvas.height = H;
+canvas.style.width = w + 'px';
 canvas.style.height = h + 'px';
 
 ctx.translate(W / 2, H / 2);
 
-var bounds = [-W / 2, -H / 2 , W / 2, H / 2];
-var box    = [-W / 5, -H / 5,  W / 5, H / 5];
+var bounds = [-W / 2, -H / 2, W / 2, H / 2];
+var box = [-W / 5, -H / 5, W / 5, H / 5];
 
-var s = [], e = [], i, a, b, inside;
+var s = [],
+  e = [],
+  i,
+  a,
+  b,
+  inside;
 ctx.strokeStyle = '#aaaaaa';
 ctx.lineWidth = 1;
 ctx.beginPath();
@@ -27,12 +32,12 @@ ctx.beginPath();
 for (i = 0; i < 200; i++) {
   a = [
     bounds[0] + (bounds[2] - bounds[0]) * Math.random(),
-    bounds[1] + (bounds[3] - bounds[1]) * Math.random(),
+    bounds[1] + (bounds[3] - bounds[1]) * Math.random()
   ];
 
   b = [
     bounds[0] + (bounds[2] - bounds[0]) * Math.random(),
-    bounds[1] + (bounds[3] - bounds[1]) * Math.random(),
+    bounds[1] + (bounds[3] - bounds[1]) * Math.random()
   ];
 
   ctx.moveTo(a[0], a[1]);
@@ -43,10 +48,10 @@ for (i = 0; i < 200; i++) {
 }
 ctx.closePath();
 
-
 ctx.lineWidth = 2;
 ctx.strokeStyle = '#ff0055';
 ctx.beginPath();
+
 for (i = 0; i < 200; i++) {
   a = s[i];
   b = e[i];
@@ -56,7 +61,6 @@ for (i = 0; i < 200; i++) {
     ctx.stroke();
   }
 }
-
 
 ctx.beginPath();
 ctx.lineWidth = 2;
