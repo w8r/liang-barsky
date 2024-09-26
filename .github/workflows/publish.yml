@@ -5,6 +5,9 @@ on:
 
 jobs:
   publish:
+    strategy:
+      matrix:
+        node-version: [20.x]
 
     runs-on: ubuntu-latest
 
