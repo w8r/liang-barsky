@@ -23,7 +23,8 @@ export type Point = [number, number];
 export type BoundingBox = [number, number, number, number];
 
 function clipT(num: number, denom: number, c: Point) {
-  const [tE, tL] = c;
+  const tE = c[0];
+  const tL = c[1];
   if (Math.abs(denom) < EPSILON) return num < 0;
   const t = num / denom;
 
@@ -45,9 +46,11 @@ function clipT(num: number, denom: number, c: Point) {
  * @param  {Point?} [db]
  * @return {number}
  */
-export default function clip(a: Point, b: Point, box: BoundingBox, da?: Point, db?: Point) {
-  const [x1, y1] = a;
-  const [x2, y2] = b;
+export function clip(a: Point, b: Point, box: BoundingBox, da?: Point, db?: Point) {
+  const x1 = a[0];
+  const y1 = a[1];
+  const x2 = b[0];
+  const y2 = b[1];
   const dx = x2 - x1;
   const dy = y2 - y1;
 
@@ -79,7 +82,8 @@ export default function clip(a: Point, b: Point, box: BoundingBox, da?: Point, d
     clipT(box[1] - y1, dy, c) &&
     clipT(y1 - box[3], -dy, c)
   ) {
-    const [tE, tL] = c;
+    const tE = c[0];
+    const tL = c[1];
     if (tL < 1) {
       db[0] = x1 + tL * dx;
       db[1] = y1 + tL * dy;
