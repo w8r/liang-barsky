@@ -93,7 +93,7 @@
     "reify": "^0.18.1",
     "replace-in-file": "^3.4.2",
     "rimraf": "^2.6.2",
-    "rollup": "^0.67.0",
+    "rollup": "^3.29.5",
     "rollup-plugin-closure-compiler-js": "^1.0.6",
     "rollup-plugin-commonjs": "^9.1.8",
     "rollup-plugin-json": "^3.1.0",
