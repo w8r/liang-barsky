@@ -1,6 +1,6 @@
 # Liang-Barsky line-clipping algorithm [![npm](https://badge.fury.io/js/liang-barsky.svg)](https://www.npmjs.com/package/liang-barsky)
 
-![Preview](https://w8r.github.io/liang-barsky/demo/thumbnail.png)
+![Preview](https://w8r.github.io/liang-barsky/thumbnail.png)
 
 Fast, *destructive* implemetation of [Liang-Barsky line clipping algorithm](https://en.wikipedia.org/wiki/Liang%E2%80%93Barsky_algorithm). It clips a 2D segment by a rectangle.
 
